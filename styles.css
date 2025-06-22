@@ -1,0 +1,216 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  max-height: 200vh; /* For scrolling demo */
+}
+
+/* Custom element styling */
+image-text-section {
+  display: block;
+  margin: 200vh 0; /* 200vh top and bottom margin */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+image-text-section.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-text {
+  max-width: 1440px;
+  margin: 0 auto;
+  /* padding: 40px 20px; */
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  /* gap: 40px; */
+  min-height: 576px;
+}
+
+/* Image container */
+.image-text__image-container {
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  min-height: 576px;
+  min-width: 720px;
+  position: relative;
+}
+
+.image-text__image {
+  width: 720px;
+  height: 576px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Text content */
+.image-text__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  background-color: #e3cfcf;
+  min-height: 576px;
+  min-width: 720px;
+  padding: 0px 60px;
+}
+
+.image-text__heading {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.image-text__paragraph {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #4d4d4d;
+  max-height: 200px;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  position: relative;
+  text-align: center;
+}
+
+.image-text__paragraph--expanded {
+  max-height: 1000px;
+}
+
+.image-text__paragraph--expanded::after {
+  opacity: 0;
+}
+
+/* Toggle button */
+.image-text__toggle {
+  align-self: center;
+  background: none;
+  color: black;
+  border: black 1px solid;
+  padding: 16px 42.66px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  align-items: center;
+}
+
+.image-text__toggle:hover {
+  background: #3a5be0;
+}
+
+.image-text__toggle:active {
+  transform: scale(0.98);
+}
+
+.image-text__toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.image-text__toggle--expanded .image-text__toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .image-text {
+    flex-direction: row;
+    align-items: center;
+    padding: 80px 40px;
+  }
+
+  .image-text__image-container {
+    flex: 1;
+    height: 500px;
+  }
+
+  .image-text__content {
+    flex: 1;
+  }
+}
+
+@media (min-width: 1440px) {
+  .image-text {
+    padding: 100px;
+    /* gap: 80px; */
+  }
+
+  .image-text__heading {
+    font-size: 40px;
+  }
+
+  .image-text__paragraph {
+    font-size: 16px;
+  }
+}
+
+/* Add this at the bottom of your CSS file */
+@media (max-width: 767px) {
+  image-text-section {
+    margin: 50vh 0; /* Reduce margin on mobile */
+  }
+
+  .image-text {
+    flex-direction: column;
+    min-height: auto;
+    padding: 0 !important;
+  }
+
+  .image-text__image-container,
+  .image-text__content {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .image-text__image-container {
+    min-height: 300px;
+    height: 300px;
+  }
+
+  .image-text__image {
+    width: 375px;
+    height: 300px;
+    object-fit: cover; /* Change from contain to cover for better mobile display */
+  }
+
+  .image-text__content {
+    min-height: 464px;
+    padding: 40px 20px !important;
+  }
+
+  .image-text__heading {
+    font-size: 24px;
+  }
+
+  .image-text__paragraph {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .scroll-footer {
+    font-size: 14px;
+    padding: 0 20px;
+    text-align: center;
+  }
+}
+
+/* Footer for scrolling space */
+.scroll-footer {
+  /* height: 200vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 18px;
+}

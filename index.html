@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image + Text Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="scroll-footer">Scroll up and down to see the reveal effect</div>
+
+    <!-- Our custom element -->
+    <image-text-section>
+        <div class="image-text">
+            <div class="image-text__image-container">
+                <img src="public/images/pic.png" alt="Model" class="image-text__image">
+            </div>
+            <div class="image-text__content">
+                <h2 class="image-text__heading">Handcrafted and Responsibly Sourced</h2>
+                <p class="image-text__paragraph" id="text-content">
+                    On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and
+                    demoralized by the
+                    charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and
+                    trouble that are bound to
+                    ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is
+                    the same as saying
+                    through shrinking from toil and pain.
+                </p>
+                <button class="image-text__toggle">
+                    <span class="image-text__toggle-text">Read more</span>
+                    <!-- <svg class="image-text__toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg> -->
+                </button>
+            </div>
+        </div>
+    </image-text-section>
+
+    <div class="scroll-footer">Scroll up and down to see the reveal effect</div>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
